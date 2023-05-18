@@ -3,11 +3,11 @@
 
 ## Atualize os seus dados
 
-- Nome:
-- Matrícula:
-- Curso:
-- Semestre/Ano correntes:
-- Link para o seu GitHub:
+- Nome:Dalton Oyama Morais
+- Matrícula:19.2.8154
+- Curso:Sistemas De Informação
+- Semestre/Ano correntes: 6
+- Link para o seu GitHub: https://github.com/Daltoonn
 
 ## [Projeto final:](./Projeto/README.md)
 
