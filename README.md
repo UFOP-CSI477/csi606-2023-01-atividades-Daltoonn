@@ -12,4 +12,4 @@
 ## [Projeto final:](./Projeto/README.md)
 
 Apresente uma breve descrição do seu projeto.
-a
+Tema: Sistema de Registro de Jogadores de futebol Oque o programa irá fazer? Será um programa similar ao Transfermarkt, que terá o propósito de registrar jogadores de futebol, contendo todas as informações mais relevantes sobre cada jogador, como por exemplo a sua posição, altura, peso, equipe atual e equipes no qual já jogou, valor de mercado, histórico de transferência, títulos conquistados, nacionalidade, tempo de contrato, histórico de desempenho por temporadas e desempenho na atual temporada (jogos, gols, assistências e cartões)
