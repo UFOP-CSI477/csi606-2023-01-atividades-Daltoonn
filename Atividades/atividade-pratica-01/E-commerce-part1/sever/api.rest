@@ -1,0 +1,227 @@
+
+GET http://localhost:5555
+
+
+###
+GET http://localhost:5555/admin
+
+//pegando todos os estados
+###
+GET http://localhost:5555/estados
+
+
+//procurando por estados com id = 1
+###
+GET http://localhost:5555/estados/1
+
+
+// POST = postar
+//da espaço 
+//so aceita tipo json
+###
+POST http://localhost:5555/estados
+Content-Type: application/json
+
+{
+    "nome": "Minas Gerais",
+    "sigla": "MG"
+}
+
+//PUT = alterar 
+//pegando em json
+###
+PUT  http://localhost:5555/estados
+Content-Type: application/json
+
+{
+    "id": 1,
+    "nome": "Minas Gerais",
+    "sigla": "MG"
+}
+
+
+//Delete = deletar
+###
+DELETE  http://localhost:5555/estados
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////METODOS PARA MECHER COM CIDADES//////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//adicionando cidades de acorgo com os estados, tipo sao paulo add santos
+###
+POST http://localhost:5555/cidades
+Content-Type: application/json
+
+{
+    "nome": "Joao Monlevade",
+    "estado_id": 1
+}
+
+
+//pegando todas cidades
+###
+GET http://localhost:5555/cidades
+
+//Delete = deletar
+###
+DELETE  http://localhost:5555/cidades
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+//PUT = alterar 
+//pegando em json
+###
+PUT  http://localhost:5555/cidades
+Content-Type: application/json
+
+{
+   "id": 1,
+   "nome": "Joaoo Monlevade",
+    "estado_id": 1
+   
+}
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////METODOS PARA MECHER COM ENDEREÇO//////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//adicionando endereços de acorgo com as cidades , tipo sao paulo add liberdade
+###
+POST http://localhost:5555/enderecos
+Content-Type: application/json
+
+{
+    "cidade_id": 1,
+
+                "rua": "Padre Pinto",
+                "numero": "224",
+                "Complemento": "nao tem",
+                "Bairro": "Lucilia",
+                "telefone": "31984233973"
+}
+
+
+//pegando todos enderecos
+###
+GET http://localhost:5555/enderecos
+
+
+//Delete = deletar
+###
+DELETE  http://localhost:5555/enderecos
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+
+//PUT = alterar 
+//pegando em json
+###
+PUT  http://localhost:5555/enderecos
+Content-Type: application/json
+
+{
+   "id": 1,
+   "rua": "Padre Padre",
+                "numero": "224",
+                "Complemento": "nao tem",
+                "Bairro": "Lucilia",
+                "telefone": "31984233973"
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////METODOS PARA MECHER COM COMPRAS//////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//adicionando compras de acorgo com as enderecos 
+###
+POST http://localhost:5555/compras
+Content-Type: application/json
+
+{
+    "endereco_id": 1,
+    "dataa": "12-06-2023"
+}
+
+
+//pegando todos compras
+###
+GET http://localhost:5555/compras
+
+//Delete = deletar
+###
+DELETE  http://localhost:5555/compras
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+
+//PUT = alterar 
+//pegando em json
+###
+PUT  http://localhost:5555/compras
+Content-Type: application/json
+
+{
+   "id": 1,
+   "data": "12-06-2023"
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////METODOS PARA MECHER COM PRODUTOS//////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+###
+POST http://localhost:5555/produtos
+Content-Type: application/json
+
+{
+    "Descricao": "Chuteira-Nike",
+    "Valor_unitario": "R$1.500"
+}
+
+//pegando todos compras
+###
+GET http://localhost:5555/produtos
+
+
+//Delete = deletar
+###
+DELETE  http://localhost:5555/produtos
+Content-Type: application/json
+
+{
+    "id": 4
+}
+
+
+//PUT = alterar 
+//pegando em json
+###
+PUT  http://localhost:5555/produtos
+Content-Type: application/json
+
+{
+   "id": 4,
+   "Descricao": "Chuteira-Adidas",
+   "Valor_unitario": "R$1.500"
+}
