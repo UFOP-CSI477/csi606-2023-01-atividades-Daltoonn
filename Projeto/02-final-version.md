@@ -12,6 +12,12 @@
 
 ### 1. Funcionalidades implementadas
 <!-- Descrever as funcionalidades que eram previstas e foram implementas. -->
+As funcionalidades de um crud completo 
+O usuarios poderam manipular dados de time ou jogadores:
+ inserir (time ou jogadores, e seus dados) 
+ ler (time ou jogadores, e seus dados) 
+ editar (time ou jogadores,  e seus dados) 
+ deletar (time ou jogadores,  e seus dados)
   
 ### 2. Funcionalidades previstas e não implementadas
 <!-- Descrever as funcionalidades que eram previstas e não foram implementas, apresentando uma breve justificativa do porquê elas não foram incluídas -->
