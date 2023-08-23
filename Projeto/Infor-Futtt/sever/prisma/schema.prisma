@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Time {
+  id    Int    @id @default(autoincrement())
+  nome  String
+  sigla String @unique
+
+  //controlar o tempo, de log, tipo momento que foi feito
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+  //lista de Jogadors, pegando Jogadors de dos Times
+
+  //variavel que vamos usar para chamar no getall como se fosse um parametro
+  Jogadors    Jogador[]
+
+  @@map("Times")
+}
+
+model Jogador {
+  //criando atribuiçoes
+  id   Int    @id @default(autoincrement())
+  nome String
+  altura String
+  idade String
+  posicao String
+
+  //armazenar campo da chave da chave estrangeira
+  Time_id Int
+  //prisma fazer relacao entre as entidades, se tiver duas chaves usa como array
+  Time    Time @relation(fields: [Time_id], references: [id]) //esse id é do Time
+
+  //controlar o tempo, de log, tipo momento que foi feito
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  @@map("Jogadores")
+}
+

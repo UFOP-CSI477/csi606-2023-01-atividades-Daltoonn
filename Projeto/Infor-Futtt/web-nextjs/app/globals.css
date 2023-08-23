@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+    @apply text-green-700 font-bold text-3xl
+}
+
+table, tr, td {
+    @apply border 
+}
+
+button{
+
+width: 256px;
+border-radius: 66px;
+background: #A8B93C;
+    
+}
+
+button:hover {
+    background: #ff0000;
+}
+
