@@ -9,11 +9,13 @@
 ### Resumo
 
   (Apresentar um breve resumo sobre o seu trabalho, indicando o contexto e as principais funcionalidades.)
+    
 
 <!-- Apresentar o tema. -->
 ### 1. Tema
 
   O trabalho final tem como tema o desenvolvimento de ...
+  Site de pesquisa e busca de jogadores de futebol e times, Scouting de futebol
 
 <!-- Descrever e limitar o escopo da aplicação. -->
 ### 2. Escopo
