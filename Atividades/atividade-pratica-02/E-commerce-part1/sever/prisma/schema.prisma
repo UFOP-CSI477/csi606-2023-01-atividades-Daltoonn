@@ -1,0 +1,103 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Estado {
+  id    Int    @id @default(autoincrement())
+  nome  String
+  sigla String @unique
+
+  //controlar o tempo, de log, tipo momento que foi feito
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+  //lista de cidades, pegando cidades de dos estados
+
+  //variavel que vamos usar para chamar no getall como se fosse um parametro
+  cidades    Cidade[]
+
+  @@map("estados")
+}
+
+model Cidade {
+  //criando atribuiçoes
+  id   Int    @id @default(autoincrement())
+  nome String
+
+  //armazenar campo da chave da chave estrangeira
+  estado_id Int
+  //prisma fazer relacao entre as entidades, se tiver duas chaves usa como array
+  estado    Estado @relation(fields: [estado_id], references: [id]) //esse id é do estado
+
+  //controlar o tempo, de log, tipo momento que foi feito
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  endereco Endereco[]
+
+  @@map("cidades")
+}
+
+model Endereco {
+  id Int @id @default(autoincrement())
+
+  rua         String
+  numero      String
+  Complemento String
+  Bairro      String
+  telefone    String
+
+  cidade_id Int
+  cidade    Cidade @relation(fields: [cidade_id], references: [id])
+
+  //controlar o tempo, de log, tipo momento que foi feito
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  compra Compra[]
+
+  @@map("enderecos")
+}
+
+model Compra {
+  id Int @id @default(autoincrement())
+
+
+  dataa String
+
+  //armazenar campo da chave da chave estrangeira
+  endereco_id Int
+  //prisma fazer relacao entre as entidades, se tiver duas chaves usa como array
+  endereco    Endereco @relation(fields: [endereco_id], references: [id]) //esse id é do endereco
+
+  //controlar o tempo, de log, tipo momento que foi feito
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  @@map("compras")
+
+}
+
+model Produto {
+  id Int @id @default(autoincrement())
+  
+  Descricao String
+  Valor_unitario String
+
+
+
+  //controlar o tempo, de log, tipo momento que foi feito
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  @@map("produtos")
+
+}
+

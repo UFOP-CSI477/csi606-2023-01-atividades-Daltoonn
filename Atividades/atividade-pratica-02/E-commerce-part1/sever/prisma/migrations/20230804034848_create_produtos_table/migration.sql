@@ -1,0 +1,8 @@
+-- CreateTable
+CREATE TABLE "produtos" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "Descricao" TEXT NOT NULL,
+    "Valor_unitario" TEXT NOT NULL,
+    "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
